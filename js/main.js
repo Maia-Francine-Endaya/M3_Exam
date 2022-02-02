@@ -82,7 +82,7 @@ shape.lineTo(0, 0);
 
 const extrudeSettings = {
   steps: 5,
-  depth: 16,
+  depth: 8,
   bevelEnabled: true,
   bevelThickness: 3,
   bevelSize: 2,
@@ -101,20 +101,29 @@ rockMesh4 = new THREE.Mesh(rockGeo2, rockMat);
 rockMesh5 = new THREE.Mesh(rockGeo2, rockMat);
 rockMesh6 = new THREE.Mesh(rockGeo2, rockMat);
 
+rockMesh7 = new THREE.Mesh(rockGeo3, rockMat);
+rockMesh8 = new THREE.Mesh(rockGeo3, rockMat);
+rockMesh9 = new THREE.Mesh(rockGeo2, rockMat);
+rockMesh10 = new THREE.Mesh(rockGeo1, rockMat);
+
 
 //Really many sea rocks
 scene.add(rockMesh1);
 scene.add(rockMesh2);
 scene.add(rockMesh3);
+
 scene.add(rockMesh4);
 scene.add(rockMesh5);
 scene.add(rockMesh6);
 
+scene.add(rockMesh7);
+scene.add(rockMesh8);
+scene.add(rockMesh9);
+scene.add(rockMesh10);
 
 
 function animate() {
   requestAnimationFrame(animate);
-
 
   //Sea Position
   seaMesh.position.x = 5;
@@ -154,6 +163,26 @@ function animate() {
   rockMesh3.position.x = 22.4;
   rockMesh3.position.y = -1;
   rockMesh3.position.z = -2;
+
+  rockMesh7.position.x = 56.8;
+  rockMesh7.position.y = -11.4;
+  rockMesh7.position.z = -29.8;
+
+  rockMesh7.rotation.y = -1.9;
+
+  rockMesh8.position.x = 96.9;
+  rockMesh8.position.y = -2.35;
+  rockMesh8.position.z = -48.9;
+
+  rockMesh8.rotation.y = 1.9;
+
+  rockMesh9.position.x = 86.7;
+  rockMesh9.position.y = -5.7;
+  rockMesh9.position.z = -27.6;
+
+  rockMesh10.position.x = 65.4;
+  rockMesh10.position.y = -1.4;
+  rockMesh10.position.z = -48.9;
 
 
   renderer.render(scene, camera);
