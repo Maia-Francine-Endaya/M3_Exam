@@ -1,3 +1,5 @@
+import { OrbitControls } from "../controls/OrbitControls";
+
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
@@ -5,6 +7,15 @@ scene.background = new THREE.Color(0xdbd2af);
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
+
+
+//FIXME: Cannot use import statement outside a module.
+//Camera Controls
+const controls = new OrbitControls(camera, renderer.domElement);
+
+//controls.update() must be called after any manual changes to the camera's transform
+camera.position.set(0, 0, 35);
+controls.update();
 
 //Fog
 function fog() {
@@ -201,6 +212,8 @@ function animate() {
   skyMesh.rotation.x = 1.6;
   skyMesh.rotation.z = -0.29;
 
+  //Camera
+  controls.update();
 
   renderer.render(scene, camera);
 }
