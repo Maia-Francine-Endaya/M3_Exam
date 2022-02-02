@@ -20,7 +20,7 @@ function lighting() {
   scene.add(directionalLight);
 
   const pointLight = new THREE.PointLight(0xf5b158, 3.5, 100);
-  pointLight.position.set(0, 2, -12);
+  pointLight.position.set(0, -1, -12);
   scene.add(pointLight);
 }
 
@@ -33,6 +33,7 @@ camera.position.z = 35;
 const seaTexture = new THREE.TextureLoader().load('assets/textures/water_texture.jpg');
 const sandTexture = new THREE.TextureLoader().load('assets/textures/beach_sand_texture.jpg');
 const rockTexture = new THREE.TextureLoader().load('assets/textures/rocky_texture.jpg');
+const cloudTexture = new THREE.TextureLoader().load('assets/images/clouds.jpg');
 
 //Shore
 const shoreGeo = new THREE.PlaneGeometry(320, 140);
@@ -121,6 +122,14 @@ scene.add(rockMesh8);
 scene.add(rockMesh9);
 scene.add(rockMesh10);
 
+//sky
+const skyGeo = new THREE.PlaneGeometry(320, 140);
+const skyMat = new THREE.MeshPhongMaterial({ map: cloudTexture, side: THREE.DoubleSide });
+
+const skyMesh = new THREE.Mesh(skyGeo, skyMat);
+
+scene.add(skyMesh);
+
 
 function animate() {
   requestAnimationFrame(animate);
@@ -183,6 +192,14 @@ function animate() {
   rockMesh10.position.x = 65.4;
   rockMesh10.position.y = -1.4;
   rockMesh10.position.z = -48.9;
+
+  //Sky
+  skyMesh.position.x = 5;
+  skyMesh.position.y = 12;
+  skyMesh.position.z = -30;
+
+  skyMesh.rotation.x = 1.6;
+  skyMesh.rotation.z = -0.29;
 
 
   renderer.render(scene, camera);
