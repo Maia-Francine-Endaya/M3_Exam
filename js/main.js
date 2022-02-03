@@ -8,8 +8,6 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
-
-//FIXME: Cannot use import statement outside a module.
 //Camera Controls
 const controls = new OrbitControls(camera, renderer.domElement);
 
