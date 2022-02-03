@@ -1,4 +1,5 @@
-import { OrbitControls } from "../controls/OrbitControls";
+import { OrbitControls } from "./OrbitControls.js";
+import * as THREE from "./three.module.js";
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -103,18 +104,18 @@ const extrudeSettings = {
 const rockGeo3 = new THREE.ExtrudeGeometry(shape, extrudeSettings);
 
 //So many rocks
-rockMesh1 = new THREE.Mesh(rockGeo1, rockMat);
-rockMesh2 = new THREE.Mesh(rockGeo1, rockMat);
-rockMesh3 = new THREE.Mesh(rockGeo1, rockMat);
+const rockMesh1 = new THREE.Mesh(rockGeo1, rockMat);
+const rockMesh2 = new THREE.Mesh(rockGeo1, rockMat);
+const rockMesh3 = new THREE.Mesh(rockGeo1, rockMat);
 
-rockMesh4 = new THREE.Mesh(rockGeo2, rockMat);
-rockMesh5 = new THREE.Mesh(rockGeo2, rockMat);
-rockMesh6 = new THREE.Mesh(rockGeo2, rockMat);
+const rockMesh4 = new THREE.Mesh(rockGeo2, rockMat);
+const rockMesh5 = new THREE.Mesh(rockGeo2, rockMat);
+const rockMesh6 = new THREE.Mesh(rockGeo2, rockMat);
 
-rockMesh7 = new THREE.Mesh(rockGeo3, rockMat);
-rockMesh8 = new THREE.Mesh(rockGeo3, rockMat);
-rockMesh9 = new THREE.Mesh(rockGeo2, rockMat);
-rockMesh10 = new THREE.Mesh(rockGeo1, rockMat);
+const rockMesh7 = new THREE.Mesh(rockGeo3, rockMat);
+const rockMesh8 = new THREE.Mesh(rockGeo3, rockMat);
+const rockMesh9 = new THREE.Mesh(rockGeo2, rockMat);
+const rockMesh10 = new THREE.Mesh(rockGeo1, rockMat);
 
 
 //Really many sea rocks
